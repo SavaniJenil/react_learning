@@ -1,3 +1,6 @@
+import React from "react";
+import  ReactDOM  from "react-dom";
+
 const heading = React.createElement(
     "h1",
     { id: "heading", className: "heading" },
@@ -7,7 +10,7 @@ const heading = React.createElement(
   const para = React.createElement(
     "div",
     { id: "para", className: "para", abc: "abc" },
-    "This is my first paragraph from React"
+    "This is my first paragraph from React🐱‍💻"
   );
   
   const root_react = ReactDOM.createRoot(document.getElementById("root"));
