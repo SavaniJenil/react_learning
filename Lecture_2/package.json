@@ -1,7 +1,7 @@
 {
-  "name": "lecture_2",
+  "name": "lecture_3",
   "version": "1.0.0",
-  "description": "Lec_2",
+  "description": "Lec_3",
   "main": "App.js",
   "scripts": {
     "test": "jest",
@@ -13,7 +13,7 @@
     "url": "git+https://github.com/SavaniJenil/react_learning.git"
   },
   "keywords": [
-    "Lecture_2"
+    "Lecture_3"
   ],
   "author": "Jenil Savani",
   "license": "ISC",
