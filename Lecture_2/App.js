@@ -24,8 +24,8 @@ const jsxHeading = <h1 id="heading" className="heading">Namaste from Jenil</h1>
 const Title = () => {
   return <h1 id="heading">Functional Components from normal fn As Title Component.</h1>
 }
-const userName = prompt("Enter your name");
-const userAge = prompt("Enter your Age");
+// const userName = prompt("Enter your name");
+// const userAge = prompt("Enter your Age");
 const HeadEl2 = () => (
 <div>
   {/* Component Composition:- We are using one component into another component */} 
@@ -33,8 +33,8 @@ const HeadEl2 = () => (
   {Title()}
   <Title></Title>
   <h1 className="heading">Functional Components from shorthand property used fn.</h1>
-  <h2>Hello from {userName}.I am {userAge} years old.</h2>
-  <div>{console.log(userName,userAge,jsxHeading)}</div>
+  {/* <h2>Hello from {userName}.I am {userAge} years old.</h2>
+  <div>{console.log(userName,userAge,jsxHeading)}</div> */}
   </div>
   )
 
