@@ -1,7 +1,7 @@
 import RestaurentCard from "./RestaurentCard";
-import resList from "../utils/mockData";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 //not use keys (not acceptable) <<<<< index as key <<<<< unique id (best practice)
 const Body = () => {
@@ -14,6 +14,10 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
 
   //userEffect() => after render a components if we want to do anything so we can do with useEffect();
+  //After each and every render cycle useEffect will call.
+  //If no dependenciy array => useEffect is called on every render.
+  //If dependency array is [] => useEffect is called on initial render(just once).
+  //If we put value(btnXYZ) in dependency [] => it will called everytime value(btnXYZ) is updated.
   useEffect(() => {
     fetchData();
   }, []);
@@ -71,15 +75,15 @@ const Body = () => {
             const filteredList = listOfRestaurent.filter(
               (res) => res.info.avgRating > 4.0
             );
-            setListOfRestaurent(filteredList);
+            setFilteredRestaurant(filteredList);
           }}
         >
           Top Rated Restaurent
         </button>
       </div>
-      <div className="res-container">
+      <div className="res-container" >
         {filteredRestaurant.map((restaurent) => (
-          <RestaurentCard key={restaurent.info.id} resData={restaurent} />
+         <Link key={restaurent.info.id} to={"/restaurants/"+restaurent.info.id}> <RestaurentCard resData={restaurent} /></Link>
         ))}
       </div>
     </div>
