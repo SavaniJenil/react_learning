@@ -147,3 +147,21 @@
   border: 1px solid gainsboro;
   text-align: center;
 }
+
+.user-card {
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.user-profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+
+.user-logo {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
