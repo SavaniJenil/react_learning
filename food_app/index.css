@@ -1,4 +1,8 @@
-.header {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* .header {
   display: flex;
   justify-content: space-between;
   border: 1px solid black;
@@ -164,4 +168,4 @@
   width: 80px;
   border-radius: 50%;
   margin-right: 20px;
-}
+} */
