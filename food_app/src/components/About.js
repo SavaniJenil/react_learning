@@ -16,8 +16,8 @@ class About extends React.Component {
     // console.log("Parent Render()");
     return (
       <div>
-        <h1>About Us Page</h1>
-        <h3>This is a React Series</h3>
+        <h1 className="text-3xl font-bold">About Us Page</h1>
+        <h3 className="text-xl font-normal">This is a React Series</h3>
         {/* <User name="Jenil Savani"/> */}
         <UserClass name="Jenil Savani" />
         {/* <UserClass name="MG" />

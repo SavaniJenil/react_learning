@@ -2,6 +2,7 @@ import RestaurentCard from "./RestaurentCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 //not use keys (not acceptable) <<<<< index as key <<<<< unique id (best practice)
 const Body = () => {
@@ -36,6 +37,10 @@ const Body = () => {
     );
   };
 
+  const onlineStatus = useOnlineStatus();
+
+  if(onlineStatus === false) return <h1>Looks like you're Offline Please check your internet Connection</h1>
+
   //Normal JS Variable
   // let listOfRestaurent = resList;
   //conditional rendering
@@ -43,11 +48,12 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="filter">
-        <div className="search">
+      {console.log(listOfRestaurent)}
+      <div className="filter flex flex-row justify-evenly w-[86%] m-auto">
+        <div className="search flex flex-row justify-evenly w-2/5 items-center">
           <input
             type="text"
-            className="search-box"
+            className="search-box text-base leading-5 w-full h-3/4 outline-0 text-center overflow-hidden text-ellipsis align-middle font-450 rounded-2xl border border-solid border-gray-200"
             placeholder="Search for restaurants and food"
             value={searchText}
             onChange={(e) => {
@@ -56,7 +62,7 @@ const Body = () => {
           />
 
           <button
-            className="search-btn"
+            className="search-btn w-auto cursor-pointer m-2 py-2 px-4 border rgb(226, 226, 231) rounded-3xl shadow hover:shadow-lg border-slate-400"
             onClick={() => {
               const filteredResList = listOfRestaurent.filter((res) => 
                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
@@ -67,9 +73,9 @@ const Body = () => {
             Search
           </button>
         </div>
-
+            <div className="">
         <button
-          className="filter-btn"
+          className="filter-btn w-auto cursor-pointer m-2 py-2 px-4 border border-slate-400 rgb(226, 226, 231) rounded-3xl shadow hover:shadow-lg"
           onClick={() => {
             const filteredList = listOfRestaurent.filter(
               (res) => res.info.avgRating > 4.0
@@ -77,10 +83,58 @@ const Body = () => {
             setFilteredRestaurant(filteredList);
           }}
         >
-          Top Rated Restaurent
+          Ratings 4.0+
         </button>
+        <button
+          className="filter-btn w-auto cursor-pointer m-2 py-2 px-4 border border-slate-400 rgb(226, 226, 231) rounded-3xl shadow hover:shadow-lg"
+          onClick={() => {
+            const filteredList = listOfRestaurent.filter(
+              (res) => res.info.sla.deliveryTime <= 25
+            );
+            setFilteredRestaurant(filteredList);
+          }}
+        >
+          Fast Delivery
+        </button>
+        <button
+          className="filter-btn w-auto cursor-pointer m-3 py-2 px-4 border border-slate-400 rgb(226, 226, 231) rounded-3xl shadow hover:shadow-lg"
+          onClick={() => {
+            const filteredList = listOfRestaurent.filter(
+              (res) => {
+                const textArr = res.info.costForTwo.match(/₹(\d+)/);
+                const num = parseInt(textArr[1], 10);
+                 return num <= 250;
+              });
+            setFilteredRestaurant(filteredList);
+          }}
+        >
+          Less than Rs.250
+        </button>
+        <button
+          className="filter-btn w-auto cursor-pointer m-3 py-2 px-4 border border-slate-400 rgb(226, 226, 231) rounded-3xl shadow hover:shadow-lg hover:bg-green-600 hover:text-white"
+          onClick={() => {
+            const filteredList = listOfRestaurent.filter(
+              (res) => res.info.avgRating > 4.0
+            );
+            setFilteredRestaurant(filteredList);
+          }}
+        >
+          Veg
+        </button>
+        <button
+          className="filter-btn w-auto cursor-pointer m-3 py-2 px-4 border border-slate-400 rgb(226, 226, 231) rounded-3xl shadow hover:shadow-lg hover:bg-red-600 hover:text-white"
+          onClick={() => {
+            const filteredList = listOfRestaurent.filter(
+              (res) => res.info.avgRating > 4.0
+            );
+            setFilteredRestaurant(filteredList);
+          }}
+        >
+          Non-Veg
+        </button>
+        </div>
       </div>
-      <div className="res-container" >
+      <div className="res-container flex flex-wrap w-[86%] mx-[7%]" >
         {filteredRestaurant.map((restaurent) => (
          <Link key={restaurent.info.id} to={"/restaurants/"+restaurent.info.id}> <RestaurentCard resData={restaurent} /></Link>
         ))}

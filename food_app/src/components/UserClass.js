@@ -37,7 +37,7 @@ class UserClass extends React.Component {
     // console.log(this.props.name + "Render()");
     const { name, avatar_url, company, location } = this.state.userInfo
     return (
-      <div className="user-card">
+      <div className="user-card mt-3 p-4 w-7/12 m-auto border border-black rounded-lg">
         {/* <h1>
           Count and Count2 is : {this.state.count} {this.state.count2}
         </h1>
@@ -53,11 +53,11 @@ class UserClass extends React.Component {
           count update
         </button> */}
 
-        <div className="user-profile">
-            <img className="user-logo" src={avatar_url} />
-            <h1>Name: {name}</h1>
+        <div className="user-profile flex flex-row justify-start items-center font-semibold">
+            <img className="user-logo h-20 w-20 mr-5 m-3 rounded-full" src={avatar_url} />
+            <h1 className="text-2xl">Name: {name}</h1>
         </div>
-        <h3>Location: {company}{", "} {location}</h3>
+        <h3 className="text-xl">Location: {company}{", "} {location}</h3>
       </div>
     );
   }
