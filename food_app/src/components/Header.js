@@ -1,8 +1,9 @@
 import { LOGO_URL } from "../utils/constants";
 import { useState } from "react";
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
@@ -12,6 +13,8 @@ const Header = () => {
     console.log("useEffect called");
   }, [btnName]);
 
+  const { loggedInUser } = useContext(UserContext);
+
   return (
     <div className="header flex justify-between shadow-lg mb-2">
       <div className="logo-container">
@@ -19,7 +22,7 @@ const Header = () => {
       </div>
       <div className="nav-items flex items-center p-8 font-customFont text-xl">
         <ul className="flex">
-          <li className="px-4 p-2 m-2">{onlineStatus ? "🌝" : "🌚"}</li>
+          <li className="px-4 p-2 m-2 text-sm">{onlineStatus ? "🟢" : "🔴"}</li>
           <li className="px-4 p-2 m-2"><Link to="/">Home</Link></li>
           <li className="px-4 p-2 m-2"><Link to="/about">About Us</Link></li>
           <li className="px-4 p-2 m-2"><Link to="/contact">Contact Us</Link></li>
@@ -33,6 +36,7 @@ const Header = () => {
           >
             {btnName}
           </button>
+          <li className="px-4 p-2 m-2 font-semibold">{loggedInUser}</li>
         </ul>
       </div>
     </div>
