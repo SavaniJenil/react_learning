@@ -1,6 +1,18 @@
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
+
 const ItemList = ({ items }) => {
   Food_IMG_API =
     "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/";
+
+
+    const dispatch = useDispatch();
+
+    const handleAddItem =(item) => {
+        //I am dispatching a Action
+        dispatch(addItem(item));
+    };
+
 
   return (
     <div>
@@ -45,7 +57,7 @@ const ItemList = ({ items }) => {
                   }
                 />
                 <div className="absolute">
-                  <button className="absolute filter-btn w-auto cursor-pointer px-2 border border-slate-400 rgb(226, 226, 231) rounded-md shadow shadow-white hover:shadow-lg ml-7 mt-[-13px] bg-white">
+                  <button className="absolute filter-btn w-auto cursor-pointer px-2 border border-slate-400 rgb(226, 226, 231) rounded-md shadow shadow-white hover:shadow-lg ml-7 mt-[-13px] bg-white" onClick={() =>handleAddItem(item)}>
                     Add+
                   </button>
                 </div>
