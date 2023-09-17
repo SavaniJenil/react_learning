@@ -15,7 +15,7 @@ const RestaurentCard = (props) => {
     costForTwo,
     sla,
     aggregatedDiscountInfoV3 = {},
-    veg
+    veg,
   } = resData?.info;
   const { slaString } = sla;
   const { header, subHeader } = aggregatedDiscountInfoV3;
@@ -25,7 +25,7 @@ const RestaurentCard = (props) => {
       style={styleCard}
     >
       <img
-        className="res-logo w-full h-32 object-cover rounded-lg"
+        className="res-logo w-full h-36 object-cover rounded-lg"
         alt="res-logo"
         src={CDN_URL + cloudinaryImageId}
       />
@@ -33,7 +33,7 @@ const RestaurentCard = (props) => {
       <div className="res-card-details flex flex-row justify-around items-center  text-slate-500">
         <h5 className="text-base mt-1 w-1/2">
           {avgRating}
-          <span className="text-yellow-300 text-lg">★</span>
+          <span className="text-yellow-400 text-lg">★</span>
         </h5>
         <h5 className="text-base mt-1 w-1/2">{slaString}</h5>
       </div>
@@ -41,10 +41,17 @@ const RestaurentCard = (props) => {
         {cuisines.join(", ")}
       </h5>
       <div className="flex flex-row justify-between  items-center">
-      <h5 className="text-base mt-1 font-medium text-slate-500">
-        {costForTwo}{" "}
-      </h5>
-      { veg ? <img className="h-7 w-7" src="https://freesvg.org/img/1531813273.png" /> : "" }       
+        <h5 className="text-base mt-1 font-medium text-slate-500">
+          {costForTwo}{" "}
+        </h5>
+        {veg ? (
+          <img
+            className="h-7 w-7"
+            src="https://freesvg.org/img/1531813273.png"
+          />
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );
@@ -63,7 +70,7 @@ export const withOfferLabel = (RestaurentCard) => {
     const { header, subHeader } = aggregatedDiscountInfoV3;
     return (
       <div className="group relative">
-        <label className="text-white bg-gradient-to-b from-transparent via-black to-black absolute truncate w-[227px] h-9 z-[2] text-xl font-bold m-[17px] pt-1 text-center mt-[100px] rounded-br-lg rounded-bl-lg transition-opacity duration-100 hover:scale-95 group-hover:scale-95">
+        <label className="text-white bg-gradient-to-b from-transparent via-black to-black absolute truncate w-[227px] h-9 z-[2] text-xl font-bold m-[17px] pt-1 text-center mt-[113px] rounded-br-lg rounded-bl-lg transition-opacity duration-100 hover:scale-95 group-hover:scale-95">
           {header} {subHeader}
         </label>
         <RestaurentCard

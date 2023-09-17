@@ -68,9 +68,11 @@ const RestaurantMenu = () => {
       </div>
 
       <div className="body">
-        <div className="delivery-details w-1/4 py-6 text-base font-bold flex flex-row justify-between">
+        <div className="delivery-details w-1/4 py-6 text-base font-bold flex flex-row justify-between text-gray-500">
           <span>{costForTwoMessage}</span>
-          <span>{slaString}</span>
+          <span className="flex flex-row">
+          <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_18,h_18/v1648635511/Delivery_fee_new_cjxumu" alt="DISTANCE_FEE_NON_FOOD_LM" className="mr-2 h-5 w-5" />
+            {slaString}</span>
         </div>
 
         <div className="offer-section flex flex-row">
