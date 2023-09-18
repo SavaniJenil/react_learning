@@ -31,7 +31,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.15.0"
   },
-  "browserlist": [
+  "browserslist": [
     "last 2 versions"
   ]
 }

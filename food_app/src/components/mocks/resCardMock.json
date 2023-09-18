@@ -1,0 +1,66 @@
+{
+  "info": {
+    "id": "352796",
+    "name": "Grameen Kulfi",
+    "cloudinaryImageId": "z8ugqbgldizxu8ol6dh5",
+    "locality": "Munnekolalu",
+    "areaName": "Marathahalli",
+    "costForTwo": "₹120 for two",
+    "cuisines": ["Ice Cream", "Desserts"],
+    "avgRating": 4.7,
+    "veg": true,
+    "feeDetails": {
+      "restaurantId": "352796",
+      "fees": [
+        {
+          "name": "BASE_DISTANCE",
+          "fee": 3000
+        },
+        {
+          "name": "BASE_TIME"
+        },
+        {
+          "name": "ANCILLARY_SURGE_FEE"
+        }
+      ],
+      "totalFee": 3000
+    },
+    "parentId": "12175",
+    "avgRatingString": "4.7",
+    "totalRatingsString": "1K+",
+    "sla": {
+      "deliveryTime": 15,
+      "lastMileTravel": 1.6,
+      "serviceability": "SERVICEABLE",
+      "slaString": "15 mins",
+      "lastMileTravelString": "1.6 km",
+      "iconType": "ICON_TYPE_EMPTY"
+    },
+    "availability": {
+      "nextCloseTime": "2023-09-12 01:00:00",
+      "opened": true
+    },
+    "badges": {},
+    "isOpen": true,
+    "type": "F",
+    "badgesV2": {
+      "entityBadges": {
+        "imageBased": {},
+        "textBased": {},
+        "textExtendedBadges": {}
+      }
+    },
+    "aggregatedDiscountInfoV3": {
+      "header": "20% OFF",
+      "subHeader": "UPTO ₹50"
+    },
+    "differentiatedUi": {
+      "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+      "differentiatedUiMediaDetails": {
+        "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+        "lottie": {},
+        "video": {}
+      }
+    }
+  }
+}
