@@ -56,11 +56,11 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      {console.log(listOfRestaurent)}
       <div className="filter flex flex-row justify-evenly w-[86%] m-auto">
         <div className="search flex flex-row justify-evenly w-2/5 items-center">
           <input
             type="text"
+            data-testid="searchInput"
             className="search-box text-base leading-5 w-full h-10 outline-0 text-center overflow-hidden text-ellipsis align-middle font-450 rounded-2xl border border-solid border-gray-200"
             placeholder="Search for restaurants and food"
             value={searchText}
@@ -87,7 +87,7 @@ const Body = () => {
             className="filter-btn w-auto cursor-pointer m-2 py-2 px-4 border border-slate-400 rgb(226, 226, 231) rounded-3xl shadow hover:shadow-lg"
             onClick={() => {
               const filteredList = listOfRestaurent.filter(
-                (res) => res.info.avgRating > 4.0
+                (res) => res.info.avgRating >= 4.0
               );
               setFilteredRestaurant(filteredList);
             }}

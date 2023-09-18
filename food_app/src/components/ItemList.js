@@ -1,9 +1,10 @@
 import { useDispatch } from "react-redux";
 import { addItem } from "../utils/cartSlice";
+import { Food_IMG_API } from "../utils/constants";
 
 const ItemList = ({ items }) => {
-  Food_IMG_API =
-    "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/";
+  // Food_IMG_API =
+  //   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/";
 
 
     const dispatch = useDispatch();
@@ -18,7 +19,7 @@ const ItemList = ({ items }) => {
     <div>
       {items.map((item) => {
         return (
-          <div className="text-base font-normal" key={item.card.info.id}>
+          <div data-testid="food-items" className="text-base font-normal" key={item.card.info.id}>
             <div className="flex flex-row justify-between py-10 border-b-2">
               <div className="item-box flex flex-col pt-5 justify-center w-10/12">
                 {item?.card?.info?.isVeg ? (

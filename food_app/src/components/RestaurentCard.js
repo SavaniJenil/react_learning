@@ -21,6 +21,7 @@ const RestaurentCard = (props) => {
   const { header, subHeader } = aggregatedDiscountInfoV3;
   return (
     <div
+      data-testid="resCard"
       className="res-card p-[5px] w-[237px] m-3 transform scale-100 transition-transform duration-300 ease-in-out hover:rounded-10 hover:scale-95 hover:transition-shadow hover:shadow-10 hover:shadow-gray-300"
       style={styleCard}
     >
