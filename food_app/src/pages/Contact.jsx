@@ -1,13 +1,12 @@
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 
 const details = {
-  name: 'Dinesh Rout',
+  name: 'Jenil Savani',
   bio: 'Frontend Developer',
   contact: {
-    email: 'rddinesh779@gmail.com',
-    github: 'https://github.com/DineshRout779',
-    linkedin: 'https://www.linkedin.com/in/dineshrout7',
-    twitter: 'https://twitter.com/DineshRout779',
+    email: 'jenilpatel9913@gmail.com',
+    github: 'https://github.com/SavaniJenil',
+    linkedin: 'https://www.linkedin.com/in/jenil-savani-043667202/',
   },
 };
 
@@ -16,7 +15,7 @@ const Contact = () => {
     <div className='container-max min-h-screen'>
       <h1 className='text-2xl my-4 font-bold'>Contact</h1>
       <div>
-        <h2 className='text-xl font-semibold'>Hi 👋, I'm {details.name} 👩‍💻</h2>
+        <h2 className='text-xl font-semibold'>Hi, I'm {details.name} </h2>
         <p className='text-lg'>{details.bio}</p>
 
         <div className='my-4 space-y-2'>
@@ -45,16 +44,6 @@ const Contact = () => {
               className='flex items-center gap-1'
             >
               {details.contact.linkedin}
-              <ArrowTopRightOnSquareIcon className='w-4 h-4' />
-            </a>
-          </p>
-          <p className='flex flex-wrap items-center gap-2'>
-            <span className='font-semibold'>Twitter: </span>{' '}
-            <a
-              href={details.contact.twitter}
-              className='flex items-center gap-1'
-            >
-              {details.contact.twitter}
               <ArrowTopRightOnSquareIcon className='w-4 h-4' />
             </a>
           </p>
