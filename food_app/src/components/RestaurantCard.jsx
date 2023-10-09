@@ -25,15 +25,15 @@ const RestaurantCard = ({ restaurant }) => {
         </div>
       </div>
 
-      <h2 className='text-lg font-semibold mt-2 text-zinc-800'>{info.name}</h2>
-      <div className='flex items-center gap-2'>
-        <StarIcon className='w-6 h-6 text-orange-400' />{' '}
+      <h2 className='text-lg font-semibold mt-2 text-zinc-800 montserrat truncate'>{info.name}</h2>
+      <div className='flex items-center gap-2 montserrat'>
+        <StarIcon className='w-6 h-6 text-yellow-400' />{' '}
         <p className='font-semibold text-gray-700 text-sm'>
           {info.avgRatingString}
         </p>
       </div>
 
-      <p className='truncate  text-zinc-600'>
+      <p className='truncate  text-zinc-600 montserrat'>
         {info?.cuisines?.map((c, i) => (
           <span key={i}>
             {c}
@@ -42,7 +42,7 @@ const RestaurantCard = ({ restaurant }) => {
         ))}
       </p>
 
-      <p className='text-zinc-600'>{info.locality}</p>
+      <p className='text-zinc-600 montserrat'>{info.locality}</p>
     </>
   );
 };
@@ -54,7 +54,7 @@ export const withTopRatedLabel = (RestaurantCard) => {
   return (props) => {
     return (
       <div className='relative'>
-        <p className='absolute z-10 -top-2 -left-2 rounded-md p-2 px-4 bg-zinc-900 text-white text-xs'>
+        <p className='absolute z-10 right-0 rounded-bl-md p-2 px-4 bg-zinc-900 bg-opacity-80 text-white text-xs '>
           Top Rated
         </p>
         <RestaurantCard {...props} />

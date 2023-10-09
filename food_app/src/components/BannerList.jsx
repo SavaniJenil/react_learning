@@ -34,7 +34,7 @@ const BannerList = ({ isLoading, banners }) => {
   return (
     <div className='container-max '>
       <div className='flex justify-between items-center mb-4'>
-        <h1 className='font-bold text-2xl text-zinc-700'>
+        <h1 className='font-bold text-2xl text-black'>
           Best offers for you
         </h1>
 
