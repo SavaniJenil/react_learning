@@ -45,13 +45,13 @@ const Body = () => {
           type='search'
           name='search'
           id='search'
-          placeholder='Search for Chicken Biriyani'
-          className='p-2 px-4 rounded-md border outline-none focus-within:border-orange-400 border-gray-200 grow w-full'
+          placeholder='Search for Restaurent'
+          className='p-2 px-4 rounded-md border outline-none focus-within:border-gray-400 border-gray-200 grow w-full'
           ref={serachRef}
         />
         <button
           type='submit'
-          className='bg-orange-400 basis-2/12 text-center text-white p-2 flex justify-center gap-2 items-center md:px-8 rounded-md text-sm md:text-base'
+          className='bg-red-600 basis-2/12 text-center text-white p-2 flex justify-center gap-2 items-center md:px-8 rounded-md text-sm md:text-base'
         >
           <MagnifyingGlassIcon className='w-4 h-4' />{' '}
           <span className='hidden md:block'>Search</span>

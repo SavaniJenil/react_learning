@@ -6,7 +6,7 @@ Lets create our react application using npm.
 npm init
 
 Press ^C at any time to quit.
-package name: (foody)
+package name: (Delishio)
 version: (1.0.0)
 description: A food delivery app
 entry point: (app.js)
@@ -18,7 +18,7 @@ license: (ISC)
 About to write to C:\workflow\namaste-react\foody\package.json:
 
 {
-  "name": "foody",
+  "name": "Delishio",
   "version": "1.0.0",
   "description": "A food delivery app",
   "main": "app.js",

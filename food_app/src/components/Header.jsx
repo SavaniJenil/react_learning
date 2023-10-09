@@ -34,7 +34,7 @@ const Header = () => {
   const handleOpenModal = () => dispatch(openLocationModal());
 
   return (
-    <header className='sticky w-full top-0 bg-white z-20 py-4 border-b shadow-sm border-gray-100'>
+    <header className='sticky w-full top-0 bg-white z-20 py-4 border-b shadow-[0_15px_40px_-29px_rgba(0,0,0,0.3)] border-gray-100'>
       <div className='container-max flex justify-between items-center'>
         <div className='flex items-center gap-2 md:gap-4'>
           <Logo />
@@ -96,7 +96,7 @@ const Header = () => {
               <ShoppingBagIcon className='w-4 h-4 text-gray-700' />{' '}
               <p className='hidden md:block'>Cart</p>
               {
-                <p className='absolute -top-1 -right-1 bg-orange-500 text-white flex justify-center items-center w-5 h-5 text-xs rounded-full'>
+                <p className='absolute -top-1 -right-1 bg-red-500 text-white flex justify-center items-center w-5 h-5 text-xs rounded-full'>
                   {items.length}
                 </p>
               }
@@ -106,14 +106,14 @@ const Header = () => {
         {isLoading ? null : isAuthenticated ? (
           <button
             onClick={() => loginWithRedirect()}
-            className='ml-4 bg-orange-400 text-white p-2 px-4 rounded-md items-center gap-2 hidden md:flex'
+            className='ml-4 bg-red-500 text-white p-2 px-4 rounded-md items-center gap-2 hidden md:flex'
           >
             Logout{' '}
           </button>
         ) : (
           <button
             onClick={() => loginWithRedirect()}
-            className='ml-4 bg-orange-400 text-white p-2 px-4 rounded-md items-center gap-2 hidden md:flex'
+            className='ml-4 bg-red-500 text-white p-2 px-4 rounded-md items-center gap-2 hidden md:flex'
           >
             Login
           </button>
@@ -166,7 +166,7 @@ const Header = () => {
                     <ShoppingBagIcon className='w-4 h-4 text-gray-700' />{' '}
                     <p>Cart</p>
                     {
-                      <p className='absolute -top-1 -right-1 bg-orange-500 text-white flex justify-center items-center w-5 h-5 text-xs rounded-full'>
+                      <p className='absolute -top-1 -right-1 bg-red-500 text-white flex justify-center items-center w-5 h-5 text-xs rounded-full'>
                         {items.length}
                       </p>
                     }
@@ -176,14 +176,14 @@ const Header = () => {
               {isLoading ? null : isAuthenticated ? (
                 <button
                   onClick={() => loginWithRedirect()}
-                  className='ml-4 bg-orange-400 text-white p-2 px-4 rounded-md items-center gap-2 hidden md:flex'
+                  className='ml-4 bg-red-500 text-white p-2 px-4 rounded-md items-center gap-2 hidden md:flex'
                 >
                   Logout{' '}
                 </button>
               ) : (
                 <button
                   onClick={() => loginWithRedirect()}
-                  className='ml-4 bg-orange-400 text-white p-2 px-4 rounded-md items-center gap-2 hidden md:flex'
+                  className='ml-4 bg-red-500 text-white p-2 px-4 rounded-md items-center gap-2 hidden md:flex'
                 >
                   Login
                 </button>
@@ -237,7 +237,7 @@ const Header = () => {
                     <ShoppingBagIcon className='w-4 h-4 text-gray-700' />{' '}
                     <p>Cart</p>
                     {
-                      <p className='absolute -top-1 -right-1 bg-orange-500 text-white flex justify-center items-center w-5 h-5 text-xs rounded-full'>
+                      <p className='absolute -top-1 -right-1 bg-red-500 text-white flex justify-center items-center w-5 h-5 text-xs rounded-full'>
                         {items.length}
                       </p>
                     }
@@ -247,14 +247,14 @@ const Header = () => {
               {isLoading ? null : isAuthenticated ? (
                 <button
                   onClick={() => loginWithRedirect()}
-                  className='ml-4 bg-orange-400 text-white p-2 px-4 rounded-md items-center gap-2 hidden md:flex'
+                  className='ml-4 bg-red-500 text-white p-2 px-4 rounded-md items-center gap-2 hidden md:flex'
                 >
                   Logout{' '}
                 </button>
               ) : (
                 <button
                   onClick={() => loginWithRedirect()}
-                  className='ml-4 bg-orange-400 text-white p-2 px-4 rounded-md items-center gap-2 hidden md:flex'
+                  className='ml-4 bg-red-500 text-white p-2 px-4 rounded-md items-center gap-2 hidden md:flex'
                 >
                   Login
                 </button>

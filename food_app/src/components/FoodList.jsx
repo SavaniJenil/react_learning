@@ -37,7 +37,7 @@ const FoodList = ({ foods }) => {
   return (
     <div className='container-max my-6 mt-8'>
       <div className='flex items-center justify-between'>
-        <h1 className='mb-4 font-bold text-2xl text-zinc-700'>
+        <h1 className='mb-4 font-bold text-2xl text-black'>
           {foods?.card?.card?.header?.title}
         </h1>
 

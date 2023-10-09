@@ -19,49 +19,38 @@ class About extends React.Component {
   render() {
     // console.log('rendered');
     return (
-      <div className='container-max py-16  text-center min-h-[80vh]'>
+      <div className='container-max py-16 flex flex-row  text-center min-h-[80vh]'>
         <img
-          src='https://www.shopurfood.com/blogs/wp-content/uploads/2022/06/How-to-Retain-in-the-Future-of-Online-Food-Delivery-industry.jpg'
+          src='https://i.pinimg.com/originals/39/d7/4b/39d74b3aff552c18810fe8a2f0b05b1f.png'
           alt=''
-          className='w-full max-w-[480px] mx-auto rounded-lg'
+          className='w-full max-w-[450px] mx-auto rounded-lg'
         />
 
-        <div className='w-[90%] max-w-[480px] mx-auto'>
-          <h1 className='text-3xl my-4'>Foody 🍔</h1>
+        <div className='w-[90%] max-w-[480px] mx-auto my-auto'>
+          <h1 className='text-3xl font-semibold my-4'>Delishio </h1>
 
-          <p>
-            Foody is a food ordering web application built with React.js ⚛ and
-            Swiggy's API.
-          </p>
-          <p>
-            This project was built 🔧 during the coursework of{' '}
+          <p className='text-start mb-2'>
+          Every day, we wake up inspired to deliver convenience that surpasses your expectations. Delishio is more than just a brand; it's a promise of unparalleled ease and comfort in your life.          </p>
+          <p className='text-start'>
+            This project was built during the learning of{' '}
             <a
-              className='text-orange-600'
+              className='text-red-500'
               href='https://namastedev.com/namaste-react/'
             >
               Namaste React
             </a>{' '}
             taught by{' '}
             <a
-              className='text-orange-600'
+              className='text-red-500'
               href='https://www.linkedin.com/in/akshaymarch7/'
             >
               Akshay Saini
             </a>
           </p>
-
-          <p>count1 : {this.state.count}</p>
-          <p>count2 : {this.state.count2}</p>
-          <button
-            className='border my-2 bg-gray-50 p-2 px-4 rounded-md'
-            onClick={() => {
-              this.setState({
-                count: this.state.count + 1,
-              });
-            }}
-          >
-            click me
-          </button>
+          <p className='text-start text-xl mt-4'>
+            Get In <span className='font-semibold'>Touch</span>
+          </p>
+          <p className='text-start mt-2'> <span className='font-semibold'>Behive workspace,</span> Plot No. 77, Jbr Tech Park, 6th Rd, Whitefield, EPIP Zone, Whitefield, Bengaluru, Karnataka 560066</p>
         </div>
       </div>
     );
