@@ -5,8 +5,7 @@ import { addToCart } from '../features/cart/cartSlice';
 import { CDN_URL } from '../utils/constants';
 
 const RestaurantMenuItem = ({ items, index, activeIndex, setActiveIndex }) => {
-  // console.log(activeIndex, index);
-  // console.log(items?.card?.card?.itemCards);
+
   const dispatch = useDispatch();
 
   const handleAddToCart = (item) => {

@@ -38,7 +38,7 @@ const FoodList = ({ foods }) => {
     <div className='container-max my-6 mt-8'>
       <div className='flex items-center justify-between'>
         <h1 className='mb-4 font-bold text-2xl text-black'>
-          {foods?.card?.card?.header?.title}
+        Craving something specific? Let us know!
         </h1>
 
         {instanceRef.current && (

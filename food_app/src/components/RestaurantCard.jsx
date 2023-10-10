@@ -26,11 +26,14 @@ const RestaurantCard = ({ restaurant }) => {
       </div>
 
       <h2 className='text-lg font-semibold mt-2 text-zinc-800 montserrat truncate'>{info.name}</h2>
-      <div className='flex items-center gap-2 montserrat'>
+      <div className='flex items-center gap-2 montserrat justify-between'>
+        <div className='flex flex-row items-center'>
         <StarIcon className='w-6 h-6 text-yellow-400' />{' '}
-        <p className='font-semibold text-gray-700 text-sm'>
+        <p className='font-semibold text-gray-700 text-sm ml-1'>
           {info.avgRatingString}
         </p>
+        </div>
+        <h5 className="font-semibold text-gray-700 text-sm w-1/2">{info.sla.slaString}</h5>
       </div>
 
       <p className='truncate  text-zinc-600 montserrat'>

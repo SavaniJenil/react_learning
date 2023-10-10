@@ -5,9 +5,9 @@ const Footer = () => {
       <a
         href='https://dineshrout.netlify.app'
         target={'_blank'}
-        className='text-red-500 font-semibold'
+        className='text-red-600 font-semibold'
       >
-        Jenil Savani
+        Jenil💚Savani
       </a>
     </div>
   );
