@@ -37,26 +37,88 @@ const Body = () => {
       <FoodList foods={foods} isLoading={isLoading} />
 
       {/* search bar */}
+      <div className='max-w-[77%] w-min-[77%] mx-auto flex flex-row items-center justify-around gap-1 md:gap-3'>
+
       <form
         onSubmit={handleSearch}
-        className='flex gap-2 md:gap-4 max-w-[560px] w-[90%] mx-auto mt-6'
+        className='flex flex flex-row items-center w-[38%]'
       >
         <input
           type='search'
           name='search'
           id='search'
           placeholder='Search for Restaurent'
-          className='p-2 px-4 rounded-md border outline-none focus-within:border-gray-400 border-gray-200 grow w-full'
+          className='search-box text-base leading-5 w-full h-10 outline-0 text-center overflow-hidden text-ellipsis align-middle font-450 rounded-2xl border border-solid border-gray-200 pr-2'
           ref={serachRef}
         />
         <button
           type='submit'
-          className='bg-red-600 basis-2/12 text-center text-white p-2 flex justify-center gap-2 items-center md:px-8 rounded-md text-sm md:text-base'
+          className='w-auto cursor-pointer m-2 py-2 px-4 border rgb(226, 226, 231) rounded-3xl shadow hover:shadow-md border-slate-400'
         >
-          <MagnifyingGlassIcon className='w-4 h-4' />{' '}
           <span className='hidden md:block'>Search</span>
         </button>
       </form>
+      <div className='filters flex flex-row items-center'>
+      <button
+            className="filter-btn w-auto cursor-pointer my-2 mx-1 py-2 px-4 border border-gray-300 rounded-3xl shadow-sm hover:shadow-md"
+            onClick={() => {
+              const filteredList = restaurants.filter(
+                (res) => res.info.avgRating >= 4.0
+              );
+              setFilteredRestaurants(filteredList);
+            }}
+          >
+            Ratings 4.0+
+          </button>
+          <button
+            className="filter-btn w-auto cursor-pointer my-2 mx-1 py-2 px-4 border border-gray-300 rounded-3xl shadow-sm hover:shadow-md"
+            onClick={() => {
+              const filteredList = restaurants.filter(
+                (res) => res.info.sla.deliveryTime <= 25
+              );
+              setFilteredRestaurants(filteredList);
+            }}
+          >
+            Fast Delivery
+          </button>
+          <button
+            className="filter-btn w-auto cursor-pointer my-2 mx-1 py-2 px-4 border border-gray-300 rounded-3xl shadow-sm hover:shadow-md"
+            onClick={() => {
+              const filteredList = restaurants.filter((res) => {
+                const textArr = res.info.costForTwo.match(/₹(\d+)/);
+                const num = parseInt(textArr[1], 10);
+                return num <= 250;
+              });
+              setFilteredRestaurants(filteredList);
+            }}
+          >
+            Less than Rs.250
+          </button>
+          <button
+            className="filter-btn w-auto cursor-pointer my-2 mx-1 py-2 px-4 border border-gray-300 rounded-3xl shadow-sm hover:shadow-md hover:bg-green-600 hover:text-white"
+            onClick={() => {
+              const filteredList = restaurants.filter(
+                (res) => res.info.veg 
+              );
+              setFilteredRestaurants(filteredList);
+            }}
+          >
+            Veg
+          </button>
+          <button
+            className="filter-btn w-auto cursor-pointer my-2 mx-1 py-2 px-4 border border-gray-300 rounded-3xl shadow-sm hover:shadow-md hover:bg-red-600 hover:text-white"
+            onClick={() => {
+              const filteredList = restaurants.filter(
+                (res) => !res.info.veg 
+              );
+              setFilteredRestaurants(filteredList);
+            }}
+          >
+            Non-Veg
+          </button>
+      </div>
+      </div>
+      
 
       {/* restaurant list */}
 

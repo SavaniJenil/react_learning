@@ -17,7 +17,7 @@ const Contact = () => {
       <div className='w-full relative'>
         <img className='w-full h-44 object-cover rounded-2xl mb-5' src='https://c4.wallpaperflare.com/wallpaper/837/898/423/food-fruit-healthy-acorn-wallpaper-preview.jpg' alt='food_img' />
         <div className="absolute top-0 left-0 bg-black bg-opacity-20 text-white p-4 w-full h-44 rounded-2xl flex items-center justify-center">
-            <p className="text-5xl font-semibold">We would love to hear from you!</p>
+            <p className="text-4xl font-semibold">We're eager to hear from you – drop us a message!</p>
         </div>
       </div>
       <div className='mx-5 w-full mb-12 flex flex-row'>
