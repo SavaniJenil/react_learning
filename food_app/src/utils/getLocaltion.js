@@ -5,23 +5,31 @@ export async function getLocation() {
         navigator.geolocation.getCurrentPosition(resolve, reject);
       });
 
-      // console.log(position);
-
       const latitude = position.coords.latitude;
       const longitude = position.coords.longitude;
 
-      const res = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${process.env.REACT_APP_CITY_API_KEY}`
-      );
+      const apiKey = process.env.REACT_APP_CITY_API_KEY; 
 
-      const city = await res.json();
+      if (!apiKey) {
+        throw new Error('Geocoding API key is missing.');
+      }
 
-      //   console.log(city.name);
+      const geocodingURL = `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${apiKey}`;
+      const geocodingResponse = await fetch(geocodingURL);
 
-      //   console.log('Latitude: ' + latitude);
-      //   console.log('Longitude: ' + longitude);
+      if (!geocodingResponse.ok) {
+        throw new Error(`Geocoding API request failed with status ${geocodingResponse.status}`);
+      }
 
-      return { longitude, latitude, city: city.name };
+      const geocodingData = await geocodingResponse.json();
+
+      if (!geocodingData.results || geocodingData.results.length === 0) {
+        throw new Error('City name not found in the geocoding response');
+      }
+
+      const city = geocodingData.results[0].components.city;
+
+      return { latitude, longitude, city };
     } else {
       throw new Error('Geolocation is not supported in your browser');
     }
