@@ -22,9 +22,9 @@ const RestaurantMenuItem = ({ items, index, activeIndex, setActiveIndex }) => {
         <h3 className='text-lg font-semibold'>{items.card.card.title}</h3>
         <button>
           {activeIndex === index ? (
-            <ChevronUpIcon className='w-6 h-6' />
+            <ChevronUpIcon className='w-6 h-6 text-red-500' />
           ) : (
-            <ChevronDownIcon className='w-6 h-6 ' />
+            <ChevronDownIcon className='w-6 h-6 text-green-500' />
           )}
         </button>
       </div>
@@ -41,6 +41,21 @@ const RestaurantMenuItem = ({ items, index, activeIndex, setActiveIndex }) => {
                 key={i}
               >
                 <div className='basis-8/12 space-y-2'>
+                {item?.card?.info?.isVeg ? (
+                  <label className="mb-3">
+                    <img
+                      className="h-4 w-4"
+                      src="https://freesvg.org/img/1531813273.png"
+                    />
+                  </label>
+                ) : (
+                  <label className="mb-3">
+                    <img
+                      className="h-4 w-4"
+                      src="https://freesvg.org/img/1531813245.png"
+                    />
+                  </label>
+                )}
                   <h2 className='text-base font-semibold'>
                     {item?.card?.info?.name}
                   </h2>
@@ -58,9 +73,9 @@ const RestaurantMenuItem = ({ items, index, activeIndex, setActiveIndex }) => {
                   />
                   <button
                     onClick={() => handleAddToCart({ ...item, itemPrice })}
-                    className='bg-white text-orange-500 hover:bg-orange-500 hover:text-white font-bold p-2 px-6 rounded-md absolute shadow-md left-[50%] -bottom-5 -translate-x-[50%]'
+                    className='bg-white text-green-500 hover:bg-green-500 hover:text-white font-bold p-1 px-6 rounded-md absolute shadow-md left-[50%] -bottom-5 -translate-x-[50%]'
                   >
-                    ADD
+                    ADD +
                   </button>
                 </div>
               </li>

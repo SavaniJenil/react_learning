@@ -45,7 +45,7 @@ const Header = () => {
           >
             <MapPinIcon className='w-4 h-4 text-gray-700' />
             {address?.city}
-            <ChevronDownIcon className='w-4 h-4 text-orange-500' />
+            <ChevronDownIcon className='w-4 h-4 text-red-500' />
           </button>
         </div>
 
