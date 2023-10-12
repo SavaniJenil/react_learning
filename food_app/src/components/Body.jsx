@@ -47,8 +47,8 @@ const Body = () => {
           type='search'
           name='search'
           id='search'
-          placeholder='Search for Restaurent'
-          className='search-box text-base leading-5 w-full h-10 outline-0 text-center overflow-hidden text-ellipsis align-middle font-450 rounded-2xl border border-solid border-gray-200 pr-2'
+          placeholder='Search for restaurent'
+          className='search-box text-base leading-5 w-full h-10 outline-0 text-center overflow-hidden text-ellipsis align-middle font-450 rounded-lg border border-solid border-gray-200 pr-2'
           ref={serachRef}
         />
         <button
@@ -118,10 +118,8 @@ const Body = () => {
           </button>
       </div>
       </div>
-      
-
+    
       {/* restaurant list */}
-
       <RestaurantList isLoading={isLoading} restaurants={filteredRestaurants} />
     </div>
   );
