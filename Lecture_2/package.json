@@ -1,0 +1,32 @@
+{
+  "name": "lecture_3",
+  "version": "1.0.0",
+  "description": "Lec_3",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest",
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SavaniJenil/react_learning.git"
+  },
+  "keywords": [
+    "Lecture_3"
+  ],
+  "author": "Jenil Savani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SavaniJenil/react_learning/issues"
+  },
+  "homepage": "https://github.com/SavaniJenil/react_learning#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.9.3",
+    "process": "^0.11.10"
+  }
+}
