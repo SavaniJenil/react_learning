@@ -15,10 +15,11 @@ const RestaurantMenuItem = ({ items, index, activeIndex, setActiveIndex }) => {
 
   return (
     <>
+    {items?.card?.card?.itemCards?.length > 0 && 
       <div
         onClick={() => setActiveIndex(index)}
         className='flex cursor-pointer justify-between items-center p-4 my-2 rounded-md bg-gray-50 select-none'
-      >
+      >            
         <h3 className='text-lg font-semibold'>{items.card.card.title}</h3>
         <button>
           {activeIndex === index ? (
@@ -28,6 +29,7 @@ const RestaurantMenuItem = ({ items, index, activeIndex, setActiveIndex }) => {
           )}
         </button>
       </div>
+      }
 
       {activeIndex === index && (
         <ul className='p-4'>
@@ -56,7 +58,7 @@ const RestaurantMenuItem = ({ items, index, activeIndex, setActiveIndex }) => {
                     />
                   </label>
                 )}
-                  <h2 className='text-base font-semibold'>
+                  <h2 className='text-sm md:text-base font-semibold'>
                     {item?.card?.info?.name}
                   </h2>
                   <p className='text-xs font-semibold'>₹{itemPrice / 100}</p>
@@ -73,7 +75,7 @@ const RestaurantMenuItem = ({ items, index, activeIndex, setActiveIndex }) => {
                   />
                   <button
                     onClick={() => handleAddToCart({ ...item, itemPrice })}
-                    className='bg-white text-green-500 hover:bg-green-500 hover:text-white font-bold p-1 px-6 rounded-md absolute shadow-md left-[50%] -bottom-5 -translate-x-[50%]'
+                    className='bg-white text-green-500 hover:bg-green-500 hover:text-white text-[8px] w-[80%] md:w-auto md:text-sm lg:text-base font-bold p-1 px-4 md:px-6 rounded-md absolute shadow-md left-[50%] -bottom-3 md:-bottom-5 -translate-x-[50%]'
                   >
                     ADD +
                   </button>

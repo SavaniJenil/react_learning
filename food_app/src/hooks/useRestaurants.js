@@ -18,7 +18,10 @@ const useRestaurants = (url) => {
 
     try {
       setIsLoading(true);
-      const { data } = await axios.post(url, address);
+      // const res = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.961616&lng=77.718919&page_type=DESKTOP_WEB_LISTING');
+      const res = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.96432&lng=77.71378&page_type=DESKTOP_WEB_LISTING');
+      // const { data } = await axios.post(url, address);
+      const data = await res.json();
 
       if (data?.data) {
         setBanners(
@@ -41,12 +44,14 @@ const useRestaurants = (url) => {
 
         setRestaurants(
           data?.data?.cards.filter(
-            (items) => items?.card?.card?.id === 'restaurant_grid_listing'
+            (items) => items?.card?.card?.id === "top_brands_for_you"
           )[0]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+          // data?.data?.cards.filter(
+          //   (items) => items?.card?.card?.id === 'restaurant_grid_listing'
+          // )[0]?.card?.card?.gridElements?.infoWithStyle?.restaurants
         );
       }
     } catch (err) {
-      console.log(err.response);
       setError(err.response);
     } finally {
       setIsLoading(false);

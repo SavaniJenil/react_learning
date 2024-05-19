@@ -9,7 +9,7 @@ const Logo = () => {
       className='text-xl md:text-2xl font-semibold flex items-center'
     >
       <img src={DelishioLogo} alt="Logo" className='w-14 rounded-md mr-1' />
-      <span className='hidden md:block logo'>Delishio</span>
+      <span className='hidden lg:block logo'>Delishio</span>
     </Link>
   );
 };

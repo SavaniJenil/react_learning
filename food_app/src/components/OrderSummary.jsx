@@ -16,7 +16,7 @@ const OrderSummary = () => {
       <h2 className='text-xl font-bold border-b pb-4'>Bill Details</h2>
 
       {/* order details */}
-      <div className='py-4 text-base space-y-4 border-b'>
+      <div className='py-4 md:text-base space-y-4 border-b text-sm'>
         <div className='flex justify-between items-center font-semibold'>
           <p className='font-normal'>Price ({cartItems.length} items)</p>
           <p>₹ {totalPrice / 100}</p>
@@ -30,13 +30,13 @@ const OrderSummary = () => {
           <p>+ ₹ {parseFloat(deliveryCharges).toFixed(2)}</p>
         </div>
 
-        <p className='text-sm my-2'>
+        <p className='text-xs md:text-sm my-2'>
           You'll save ₹{parseFloat(discount).toFixed(2)} on this order 🎉🎉
         </p>
       </div>
 
       <div className='py-4 border-b'>
-        <div className='md:flex justify-between items-center font-bold text-lg md:text-xl'>
+        <div className='md:flex justify-between items-center font-bold text-base md:text-lg'>
           <h1>To Pay</h1>
           <h1 className='text-black-500'>
             ₹ {parseFloat(totalAmt).toFixed(2)}
@@ -44,7 +44,7 @@ const OrderSummary = () => {
         </div>
       </div>
 
-      <button className='w-full block mt-4 uppercase font-bold text-lg bg-green-600 text-white text-center p-4 rounded-md'>
+      <button className='w-3/4 mx-auto md:w-full block mt-4 uppercase font-bold text-base md:text-lg bg-green-600 text-white text-center p-2 md:p-4 rounded-md'>
         Place order
       </button>
     </div>

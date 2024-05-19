@@ -17,16 +17,15 @@ class About extends React.Component {
   }
 
   render() {
-    // console.log('rendered');
     return (
-      <div className='container-max py-16 flex flex-row  text-center min-h-[80vh]'>
+      <div className='container-max py-14 flex flex-col md:flex-row gap-2 md:gap-4 text-center min-h-[80vh]'>
         <img
           src='https://i.pinimg.com/originals/39/d7/4b/39d74b3aff552c18810fe8a2f0b05b1f.png'
           alt=''
           className='w-full max-w-[450px] mx-auto rounded-lg'
         />
 
-        <div className='w-[90%] max-w-[480px] mx-auto my-auto'>
+        <div className='w-[80%] max-w-[480px] mx-auto my-auto'>
           <h1 className='text-3xl font-semibold my-4'>Delishio </h1>
 
           <p className='text-start mb-2'>

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import RestaurantMenuItem from './RestaurantMenuItem';
 
 const RestaurantMenu = ({ menu }) => {
-  const [activeAccordionIndex, setActiveAccordionIndex] = useState(0);
+  const [activeAccordionIndex, setActiveAccordionIndex] = useState(2);
 
   const handleToggleAccordion = (index) => {
     if (index === activeAccordionIndex) {

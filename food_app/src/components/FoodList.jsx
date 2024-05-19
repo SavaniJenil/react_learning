@@ -19,13 +19,13 @@ const FoodList = ({ foods }) => {
 
     breakpoints: {
       '(max-width: 480px)': {
-        slides: { perView: 4, spacing: 10 },
+        slides: { perView: 3, spacing: 10 },
       },
       '(min-width: 480px)': {
-        slides: { perView: 6, spacing: 10 },
+        slides: { perView: 5, spacing: 10 },
       },
       '(min-width: 768px)': {
-        slides: { perView: 8, spacing: 10 },
+        slides: { perView: 7, spacing: 10 },
       },
     },
   });

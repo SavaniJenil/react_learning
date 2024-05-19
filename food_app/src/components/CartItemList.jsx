@@ -54,7 +54,7 @@ const CartItemList = () => {
               />
             </div>
             <div className="basis-9/12">
-              <p className="text-lg font-semibold">
+              <p className="text-sm md:text-lg font-semibold">
                 {item?.item?.card?.info?.name}
               </p>
 
@@ -64,7 +64,7 @@ const CartItemList = () => {
                   : item?.item?.card?.info?.description}
               </p>
 
-              <p className="my-2 space-x-1">
+              <p className="my-2 space-x-1 text-sm md:text-lg">
                 <span className="font-semibold">
                   ₹
                   {parseFloat(
@@ -79,13 +79,13 @@ const CartItemList = () => {
               </p>
 
               {/* actions */}
-              <div className="flex justify-between items-center mt-2">
+              <div className="flex justify-between items-center mt-2 text-sm md:text-lg">
                 <div className="flex items-center">
                   <button
                     onClick={() => decreaseQuantity(item?.item?.card?.info?.id)}
-                    disabled={item?.quantity === 1}
+                    // disabled={item?.quantity === 1}
                     className={
-                      "bg-red-500 disabled:bg-red-500/50 disabled:cursor-not-allowed text-white font-bold w-8 h-8 rounded-full"
+                      "bg-red-500 disabled:bg-red-500/50 disabled:cursor-not-allowed text-white font-bold w-6 h-6 md:w-8 md:h-8 rounded-full"
                     }
                   >
                     -
@@ -95,7 +95,7 @@ const CartItemList = () => {
                   </p>
                   <button
                     onClick={() => increaseQuantity(item?.item?.card?.info?.id)}
-                    className="bg-green-500 text-white font-bold w-8 h-8 rounded-full"
+                    className="bg-green-500 text-white font-bold w-6 h-6 md:w-8 md:h-8 rounded-full"
                   >
                     +
                   </button>
@@ -103,7 +103,7 @@ const CartItemList = () => {
 
                 <button
                   onClick={() => removeItem(item?.item?.card?.info?.id)}
-                  className="border border-red-500 text-xs font-semibold text-red-500 p-2 px-4 rounded-sm hover:bg-red-500 hover:text-white"
+                  className="border border-red-500 text-xs font-semibold text-red-500 p-1 px-2 md:p-2 md:px-4 rounded-sm hover:bg-red-500 hover:text-white"
                 >
                   Remove
                 </button>

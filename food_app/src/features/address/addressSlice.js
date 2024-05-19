@@ -1,10 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  address: JSON.parse(localStorage.getItem('address')) || {
+  // JSON.parse(localStorage.getItem('address')) || 
+  address: {
     latitude: 12.96432,
     longitude: 77.71378,
-    city: 'Bengaluru',
+    city: 'Bengalore',
   },
 };
 

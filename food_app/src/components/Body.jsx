@@ -37,30 +37,30 @@ const Body = () => {
       <FoodList foods={foods} isLoading={isLoading} />
 
       {/* search bar */}
-      <div className='max-w-[77%] w-min-[77%] mx-auto flex flex-row items-center justify-around gap-1 md:gap-3'>
+      <div className='container-max mx-auto flex flex-row items-center flex-wrap md:flex-none justify-around gap-1 md:gap-3'>
 
       <form
         onSubmit={handleSearch}
-        className='flex flex flex-row items-center w-[38%]'
+        className='flex flex-row items-center w-[38%] gap-1 md:gap-3'
       >
         <input
           type='search'
           name='search'
           id='search'
           placeholder='Search for restaurent'
-          className='search-box text-base leading-5 w-full h-10 outline-0 text-center overflow-hidden text-ellipsis align-middle font-450 rounded-lg border border-solid border-gray-200 pr-2'
+          className='search-box text-[8px] md:text-xs lg:text-base leading-5 pl-2 md:pl-5 w-full h-6 md:h-10 outline-0 text-left overflow-hidden text-ellipsis align-middle font-450 rounded-lg border border-solid border-gray-200 pr-2'
           ref={serachRef}
         />
         <button
           type='submit'
-          className='w-auto cursor-pointer m-2 py-2 px-4 border rgb(226, 226, 231) rounded-3xl shadow hover:shadow-md border-slate-400'
+          className='filter-btn w-auto cursor-pointer my-1 md:my-2 md:mx-1 py-1 md:py-2 px-2 md:px-4 border border-gray-300 rounded-3xl shadow-sm hover:shadow-md text-[8px] md:text-xs lg:text-base'
         >
-          <span className='hidden md:block'>Search</span>
+          <span className='filter-btn md:block text-[8px] md:text-xs lg:text-base'>Search</span>
         </button>
       </form>
-      <div className='filters flex flex-row items-center'>
+      <div className='filters flex flex-row items-center gap-1 md:gap-0'>
       <button
-            className="filter-btn w-auto cursor-pointer my-2 mx-1 py-2 px-4 border border-gray-300 rounded-3xl shadow-sm hover:shadow-md"
+            className="filter-btn w-auto cursor-pointer my-1 md:my-2 md:mx-1 py-1 md:py-2 px-2 md:px-4 border border-gray-300 rounded-3xl shadow-sm hover:shadow-md text-[8px] md:text-xs lg:text-base"
             onClick={() => {
               const filteredList = restaurants.filter(
                 (res) => res.info.avgRating >= 4.0
@@ -71,7 +71,7 @@ const Body = () => {
             Ratings 4.0+
           </button>
           <button
-            className="filter-btn w-auto cursor-pointer my-2 mx-1 py-2 px-4 border border-gray-300 rounded-3xl shadow-sm hover:shadow-md"
+            className="filter-btn w-auto cursor-pointer my-1 md:my-2 md:mx-1 py-1 md:py-2 px-2 md:px-4 border border-gray-300 rounded-3xl shadow-sm hover:shadow-md text-[8px] md:text-xs lg:text-base"
             onClick={() => {
               const filteredList = restaurants.filter(
                 (res) => res.info.sla.deliveryTime <= 25
@@ -82,7 +82,7 @@ const Body = () => {
             Fast Delivery
           </button>
           <button
-            className="filter-btn w-auto cursor-pointer my-2 mx-1 py-2 px-4 border border-gray-300 rounded-3xl shadow-sm hover:shadow-md"
+            className="filter-btn w-auto cursor-pointer my-1 md:my-2 md:mx-1 py-1 md:py-2 px-2 md:px-4 border border-gray-300 rounded-3xl shadow-sm hover:shadow-md text-[8px] md:text-xs lg:text-base"
             onClick={() => {
               const filteredList = restaurants.filter((res) => {
                 const textArr = res.info.costForTwo.match(/₹(\d+)/);
@@ -95,7 +95,7 @@ const Body = () => {
             Less than Rs.250
           </button>
           <button
-            className="filter-btn w-auto cursor-pointer my-2 mx-1 py-2 px-4 border border-gray-300 rounded-3xl shadow-sm hover:shadow-md hover:bg-green-600 hover:text-white"
+            className="filter-btn w-auto cursor-pointer my-1 md:my-2 md:mx-1 py-1 md:py-2 px-2 md:px-4 border border-gray-300 rounded-3xl shadow-sm hover:shadow-md hover:bg-green-600 hover:text-white text-[8px] md:text-xs lg:text-base"
             onClick={() => {
               const filteredList = restaurants.filter(
                 (res) => res.info.veg 
@@ -103,10 +103,10 @@ const Body = () => {
               setFilteredRestaurants(filteredList);
             }}
           >
-            Veg
+           Pure Veg
           </button>
           <button
-            className="filter-btn w-auto cursor-pointer my-2 mx-1 py-2 px-4 border border-gray-300 rounded-3xl shadow-sm hover:shadow-md hover:bg-red-600 hover:text-white"
+            className="filter-btn w-auto cursor-pointer my-1 md:my-2 md:mx-1 py-1 md:py-2 px-2 md:px-4 border border-gray-300 rounded-3xl shadow-sm hover:shadow-md hover:bg-red-600 hover:text-white text-[8px] md:text-xs lg:text-base"
             onClick={() => {
               const filteredList = restaurants.filter(
                 (res) => !res.info.veg 

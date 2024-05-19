@@ -36,9 +36,8 @@ const Header = () => {
   return (
     <header className='sticky w-full top-0 bg-white z-20 py-4 border-b shadow-[0_15px_40px_-29px_rgba(0,0,0,0.3)] border-gray-100'>
       <div className='container-max flex justify-between items-center'>
-        <div className='flex items-center gap-2 md:gap-4'>
+        <div className='flex items-center md:gap-0 lg:gap-4'>
           <Logo />
-
           <button
             onClick={handleOpenModal}
             className='text-xs md:text-sm flex items-center gap-1'
@@ -51,11 +50,11 @@ const Header = () => {
 
         {isLocationModalOpen ? <LocationModal /> : null}
 
-        <ul className='text-zinc-700 ml-auto gap-2 md:gap-4 items-center hidden md:flex'>
+        <ul className='text-zinc-700 ml-auto md:gap-2 lg:gap-4 items-center hidden md:flex'>
           <li>
             <Link
               to='/search'
-              className='p-2 md:px-4 hover:bg-gray-50 rounded-md flex items-center gap-2'
+              className='p-1 md:px-2 hover:bg-gray-50 rounded-md flex items-center gap-2'
             >
               <MagnifyingGlassIcon className='w-4 h-4 text-gray-700' />{' '}
               <p className='hidden md:block'>Search</p>
@@ -64,7 +63,7 @@ const Header = () => {
           <li>
             <Link
               to='/'
-              className='p-2 md:px-4 hover:bg-gray-50 rounded-md flex items-center gap-2'
+              className='p-1 md:px-2 hover:bg-gray-50 rounded-md flex items-center gap-2'
             >
               <HomeIcon className='w-4 h-4 text-gray-700' />{' '}
               <p className='hidden md:block'>Home</p>
@@ -73,7 +72,7 @@ const Header = () => {
           <li>
             <Link
               to='/about'
-              className='p-2 md:px-4 hover:bg-gray-50 rounded-md flex items-center gap-2'
+              className='p-1 md:px-2 hover:bg-gray-50 rounded-md flex items-center gap-2'
             >
               <BuildingOfficeIcon className='w-4 h-4 text-gray-700' />{' '}
               <p className='hidden md:block'>About</p>
@@ -82,7 +81,7 @@ const Header = () => {
           <li>
             <Link
               to='/contact'
-              className='p-2 md:px-4 hover:bg-gray-50 rounded-md flex items-center gap-2'
+              className='p-1 md:px-2 hover:bg-gray-50 rounded-md flex items-center gap-2'
             >
               <PhoneIcon className='w-4 h-4 text-gray-700' />{' '}
               <p className='hidden md:block'>Contact</p>
@@ -91,12 +90,12 @@ const Header = () => {
           <li>
             <Link
               to='/cart'
-              className='p-2 relative md:px-4 hover:bg-gray-50 rounded-md flex items-center gap-2'
+              className='p- relative md:px-2 hover:bg-gray-50 rounded-md flex items-center gap-2'
             >
               <ShoppingBagIcon className='w-4 h-4 text-gray-700' />{' '}
               <p className='hidden md:block'>Cart</p>
               {
-                <p className='absolute -top-1 -right-1 bg-red-500 text-white flex justify-center items-center w-5 h-5 text-xs rounded-full'>
+                <p className='absolute -top-[10.60] -right-[10.60] bg-red-500 text-white flex justify-center items-center w-5 h-5 text-xs rounded-full'>
                   {items.length}
                 </p>
               }
@@ -166,7 +165,7 @@ const Header = () => {
                     <ShoppingBagIcon className='w-4 h-4 text-gray-700' />{' '}
                     <p>Cart</p>
                     {
-                      <p className='absolute -top-1 -right-1 bg-red-500 text-white flex justify-center items-center w-5 h-5 text-xs rounded-full'>
+                      <p className='absolute -top-[10.60] -right-[10.60] bg-red-500 text-white flex justify-center items-center w-5 h-5 text-xs rounded-full'>
                         {items.length}
                       </p>
                     }
@@ -237,7 +236,7 @@ const Header = () => {
                     <ShoppingBagIcon className='w-4 h-4 text-gray-700' />{' '}
                     <p>Cart</p>
                     {
-                      <p className='absolute -top-1 -right-1 bg-red-500 text-white flex justify-center items-center w-5 h-5 text-xs rounded-full'>
+                      <p className='absolute -top-[10.60] -right-[10.60] bg-red-500 text-white flex justify-center items-center w-5 h-5 text-xs rounded-full'>
                         {items.length}
                       </p>
                     }

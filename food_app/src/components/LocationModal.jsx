@@ -17,7 +17,12 @@ const LocationModal = () => {
     try {
       setisLoading(true);
 
-      const res = await getLocation();
+      const res = {
+        latitude: 12.96432,
+        longitude: 77.71378,
+        city: 'Bengalore',
+      };
+      // await getLocation();
 
       res && setisLoading(false);
 
