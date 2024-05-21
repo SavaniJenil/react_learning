@@ -26,7 +26,13 @@ git clone https://github.com/SavaniJenil/react_learning.git
 npm install
 ```
 
-3. Start the dev server
+3. Change directory 
+
+```bash
+cd food_app
+```
+
+4. Start the dev server
 
 ```bash
 npm start
