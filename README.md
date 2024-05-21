@@ -12,13 +12,6 @@ This project was built as a part of the course Namaste React by  Jenil Savani.
 - Jest(Testing)
 - Redux-toolkit
 
-## Features
-
-- Get restaurants by current location
-- Add to cart
-- Shimmer UI
--
-
 ## How to use
 
 1. Clone the repo
