@@ -95,7 +95,7 @@ const Body = () => {
             Less than Rs.250
           </button>
           <button
-            className="filter-btn w-auto cursor-pointer my-1 md:my-2 md:mx-1 py-1 md:py-2 px-2 md:px-4 border border-gray-300 rounded-3xl shadow-sm hover:shadow-md hover:bg-green-600 hover:text-white text-[8px] md:text-xs lg:text-base"
+            className="filter-btn w-auto cursor-pointer my-1 md:my-2 md:mx-1 py-1 md:py-2 px-2 md:px-4 border border-gray-300 rounded-3xl shadow-sm hover:shadow-md hover:bg-green-500 hover:text-white text-[8px] md:text-xs lg:text-base"
             onClick={() => {
               const filteredList = restaurants.filter(
                 (res) => res.info.veg 
@@ -106,7 +106,7 @@ const Body = () => {
            Pure Veg
           </button>
           <button
-            className="filter-btn w-auto cursor-pointer my-1 md:my-2 md:mx-1 py-1 md:py-2 px-2 md:px-4 border border-gray-300 rounded-3xl shadow-sm hover:shadow-md hover:bg-red-600 hover:text-white text-[8px] md:text-xs lg:text-base"
+            className="filter-btn w-auto cursor-pointer my-1 md:my-2 md:mx-1 py-1 md:py-2 px-2 md:px-4 border border-gray-300 rounded-3xl shadow-sm hover:shadow-md hover:bg-red-500 hover:text-white text-[8px] md:text-xs lg:text-base"
             onClick={() => {
               const filteredList = restaurants.filter(
                 (res) => !res.info.veg 
