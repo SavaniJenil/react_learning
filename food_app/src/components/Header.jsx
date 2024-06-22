@@ -104,14 +104,14 @@ const Header = () => {
         </ul>
         {isLoading ? null : isAuthenticated ? (
           <button
-            onClick={() => loginWithRedirect()}
+            // onClick={() => loginWithRedirect()}
             className='ml-4 bg-red-500 text-white p-2 px-4 rounded-md items-center gap-2 hidden md:flex'
           >
             Logout{' '}
           </button>
         ) : (
           <button
-            onClick={() => loginWithRedirect()}
+            // onClick={() => loginWithRedirect()}
             className='ml-4 bg-red-500 text-white p-2 px-4 rounded-md items-center gap-2 hidden md:flex'
           >
             Login
@@ -174,14 +174,14 @@ const Header = () => {
               </ul>
               {isLoading ? null : isAuthenticated ? (
                 <button
-                  onClick={() => loginWithRedirect()}
+                  // onClick={() => loginWithRedirect()}
                   className='ml-4 bg-red-500 text-white p-2 px-4 rounded-md items-center gap-2 hidden md:flex'
                 >
                   Logout{' '}
                 </button>
               ) : (
                 <button
-                  onClick={() => loginWithRedirect()}
+                  // onClick={() => loginWithRedirect()}
                   className='ml-4 bg-red-500 text-white p-2 px-4 rounded-md items-center gap-2 hidden md:flex'
                 >
                   Login
@@ -245,14 +245,14 @@ const Header = () => {
               </ul>
               {isLoading ? null : isAuthenticated ? (
                 <button
-                  onClick={() => loginWithRedirect()}
+                  // onClick={() => loginWithRedirect()}
                   className='ml-4 bg-red-500 text-white p-2 px-4 rounded-md items-center gap-2 hidden md:flex'
                 >
                   Logout{' '}
                 </button>
               ) : (
                 <button
-                  onClick={() => loginWithRedirect()}
+                  // onClick={() => loginWithRedirect()}
                   className='ml-4 bg-red-500 text-white p-2 px-4 rounded-md items-center gap-2 hidden md:flex'
                 >
                   Login

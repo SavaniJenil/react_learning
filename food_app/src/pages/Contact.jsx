@@ -1,4 +1,4 @@
-import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
+import { useState } from "react";
 
 const details = {
   name: "Jenil Savani",
@@ -12,12 +12,26 @@ const details = {
 };
 
 const Contact = () => {
+  const [fullName, setFullName] = useState('');
+  const [emailAddress, setEmailAddress] = useState('');
+  const [mobileNumber, setMobileNumber] = useState('');
+  const [message, setMessage] = useState('');
+
+  function handleClick(event) {
+    event.preventDefault();
+    setFullName('');
+    setEmailAddress('');
+    setMobileNumber('');
+    setMessage('');
+    window.alert("Thank you for your valuable feedback");
+  }
+
   return (
     <div className="container-max md:mt-14 min-h-screen mt-5 flex flex-col w-full">
       <div className="w-full flex justify-center relative">
         <img
           className="w-5/6 mx-auto md:w-[97%] h-28 md:h-44 object-cover rounded-2xl mb-5"
-          src="https://c4.wallpaperflare.com/wallpaper/837/898/423/food-fruit-healthy-acorn-wallpaper-preview.jpg"
+          src="https://static.vecteezy.com/system/resources/previews/030/637/457/non_2x/dark-fast-food-8k-free-photo.jpg"
           alt="food_img"
         />
         <div className="absolute top-0 md:p-4 w-5/6 mx-auto md:mx-auto md:w-[97%] h-28 md:h-44 bg-black bg-opacity-20 text-white rounded-2xl flex items-center justify-center">
@@ -39,6 +53,8 @@ const Contact = () => {
                 id="fullName"
                 name="fullName"
                 placeholder="Full Name"
+                value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
                 className="p-2 px-4 rounded-md border outline-none focus-within:border-gray-400 border-gray-200 grow w-full"
                 required
               />
@@ -53,6 +69,8 @@ const Contact = () => {
                 id="emailAddress"
                 name="emailAddress"
                 placeholder="Email Address"
+                value={emailAddress}
+                onChange={(e) => setEmailAddress(e.target.value)}
                 className="p-2 px-4 rounded-md border outline-none focus-within:border-gray-400 border-gray-200 grow w-full"
                 required
               />
@@ -67,6 +85,8 @@ const Contact = () => {
                 id="mobileNumber"
                 name="mobileNumber"
                 placeholder="Mobile Number (optional)"
+                value={mobileNumber}
+                onChange={(e) => setMobileNumber(e.target.value)}
                 className="p-2 px-4 rounded-md border outline-none focus-within:border-gray-400 border-gray-200 grow w-full"
               />
             </div>
@@ -80,13 +100,15 @@ const Contact = () => {
                 name="message"
                 rows="4"
                 placeholder="Type text"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
                 className="p-2 px-4 rounded-md border outline-none focus-within:border-gray-400 border-gray-200 grow w-full"
                 required
               />
             </div>
             <div className="text-center">
               <button
-              onClick={(event) => {event.preventDefault()}}
+              onClick={handleClick}
                 type="submit"
                 className="w-3/4 mx-auto md:w-full block mt-4 uppercase font-bold text-base md:text-lg bg-green-600 text-white text-center p-2 md:p-4 rounded-md"
               >

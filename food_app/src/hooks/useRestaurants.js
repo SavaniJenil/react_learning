@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectAddress } from '../features/address/addressSlice';
@@ -18,9 +17,13 @@ const useRestaurants = (url) => {
 
     try {
       setIsLoading(true);
-      // const res = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.961616&lng=77.718919&page_type=DESKTOP_WEB_LISTING');
-      const res = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.96432&lng=77.71378&page_type=DESKTOP_WEB_LISTING');
-      // const { data } = await axios.post(url, address);
+      const res = await fetch(url+ '/api/restaurants', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(address)
+      });
       const data = await res.json();
 
       if (data?.data) {
@@ -60,7 +63,7 @@ const useRestaurants = (url) => {
 
   useEffect(() => {
     getRestaurants();
-  }, [address.city]);
+  }, [address.city, address.latitude, address.longitude]);
 
   return {
     banners,

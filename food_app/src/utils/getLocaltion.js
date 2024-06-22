@@ -4,7 +4,7 @@ export async function getLocation() {
       const position = await new Promise((resolve, reject) => {
         navigator.geolocation.getCurrentPosition(resolve, reject);
       });
-
+      
       const latitude = position.coords.latitude;
       const longitude = position.coords.longitude;
 
@@ -14,7 +14,7 @@ export async function getLocation() {
         throw new Error('Geocoding API key is missing.');
       }
 
-      const geocodingURL = `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${apiKey}`;
+      const geocodingURL = `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${apiKey}`;      
       const geocodingResponse = await fetch(geocodingURL);
 
       if (!geocodingResponse.ok) {
@@ -27,7 +27,7 @@ export async function getLocation() {
         throw new Error('City name not found in the geocoding response');
       }
 
-      const city = geocodingData.results[0].components.city;
+      const city = geocodingData.results[0].components.city || "Bengalore";
 
       return { latitude, longitude, city };
     } else {
